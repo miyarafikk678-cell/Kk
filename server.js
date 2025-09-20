@@ -1,17 +1,21 @@
-const express = require('express');
-const { Low, JSONFile } = require('lowdb');
-const { nanoid } = require('nanoid');
-const cors = require('cors');
-const path = require('path');
-const bodyParser = require('body-parser');
-
+const express = require("express");
 const app = express();
-app.use(cors());
-app.use(bodyParser.json());
+const path = require("path");
 
-// Serve static frontend
-app.use(express.static(path.join(__dirname, '..', 'public')));
+const PORT = process.env.PORT || 10000;
 
+// Serve frontend
+app.use(express.static(path.join(__dirname, "frontend")));
+
+// API routes
+app.get("/api/test", (req, res) => {
+  res.json({ message: "Server running fine 🚀" });
+});
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
+});
 // LowDB setup
 const file = path.join(__dirname, 'db.json');
 const adapter = new JSONFile(file);
