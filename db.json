@@ -1,0 +1,13 @@
+{
+  "admins": [
+    { "id": "admin-cheesy", "username": "Cheesyorder", "password": "Chessy$2023" }
+  ],
+  "branches": [
+    { "id": "b-cheesy", "name": "Cheesy" },
+    { "id": "b-burrata", "name": "Burrata" },
+    { "id": "b-koubkarak", "name": "Koubkarak" }
+  ],
+  "users": [],
+  "items": [],
+  "orders": []
+}
